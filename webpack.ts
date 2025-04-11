@@ -22,7 +22,7 @@ const getModuleinfo = (file: string) => {
 			// console.log("import", node);
 
 			// console.log(path.dirname(file));
-			const abspath = "./" + path.join(path.dirname(file), node.source.value);
+			const abspath = "./" + path.join(path.dirname(file), node.source.value).replace('\\', '/');
 
 			deps[node.source.value] = abspath;
 		},
